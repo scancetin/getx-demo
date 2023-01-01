@@ -31,7 +31,16 @@ class SecondPage extends StatelessWidget {
             ElevatedButton.icon(
               icon: Icon(Icons.add),
               label: Text("Bottom Sheet"),
-              onPressed: () => Get.bottomSheet(Container(height: 100, color: Colors.red)),
+              onPressed: () => Get.bottomSheet(Wrap(
+                children: <Widget>[
+                  ListTile(leading: Icon(Icons.music_note), title: Text('Music'), onTap: () {}),
+                  ListTile(
+                    leading: Icon(Icons.videocam),
+                    title: Text('Video'),
+                    onTap: () {},
+                  ),
+                ],
+              )),
             ),
           ],
         ),
