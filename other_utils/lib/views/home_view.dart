@@ -15,10 +15,6 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ElevatedButton(
-              child: Text("title".tr),
-              onPressed: () => Get.toNamed("/second", arguments: "First to Second - to"),
-            ),
-            ElevatedButton(
               child: Text("changeLang".trParams({"emoji": "🌍"})),
               onPressed: () => Get.locale == const Locale("en_US") ? Get.updateLocale(const Locale("tr_TR")) : Get.updateLocale(const Locale("en_US")),
             ),
