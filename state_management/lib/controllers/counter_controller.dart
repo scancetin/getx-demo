@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:state_management/models/counter_model.dart';
 
@@ -6,6 +7,7 @@ class CounterController extends GetxController {
 
   int get counterValue => _counter.value.counterValue;
   String get message => _counter.value.message;
+  bool get darkTheme => _counter.value.darkTheme;
 
   void increment() {
     // _counter.value.counterValue += 1;
@@ -24,6 +26,14 @@ class CounterController extends GetxController {
 
     _counter.update((val) {
       val?.counterValue -= 1;
+    });
+  }
+
+  void changeTheme() {
+    Get.isDarkMode ? Get.changeTheme(ThemeData.light()) : Get.changeTheme(ThemeData.dark());
+
+    _counter.update((val) {
+      val?.darkTheme = !darkTheme;
     });
   }
 }

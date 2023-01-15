@@ -1,10 +1,12 @@
 class CounterModel {
   int counterValue;
   String message;
+  bool darkTheme;
 
   CounterModel({
     this.counterValue = 0,
     this.message = "Counter value",
+    this.darkTheme = false,
   });
 }
 

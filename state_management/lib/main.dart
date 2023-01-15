@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get.dart';
 import 'package:state_management/views/home_view.dart';
+
+import 'views/second.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,9 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       title: 'Material App',
-      home: HomeView(),
+      initialRoute: "/home",
+      getPages: [
+        GetPage(name: "/home", page: () => const HomeView()),
+        GetPage(name: "/second", page: () => const SecondView(), transition: Transition.downToUp),
+      ],
     );
   }
 }

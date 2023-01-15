@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:state_management/controllers/counter_controller.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class SecondView extends StatelessWidget {
+  const SecondView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +49,13 @@ class HomeView extends StatelessWidget {
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
-            heroTag: "2",
+            heroTag: "5",
             onPressed: (() => counterCon.decrement()),
             child: const Icon(Icons.remove),
           ),
           GetX<CounterController>(builder: (countCon) {
             return FloatingActionButton(
-              heroTag: "3",
+              heroTag: "2",
               onPressed: (() {
                 countCon.changeTheme();
                 print(countCon.darkTheme);
@@ -64,14 +64,14 @@ class HomeView extends StatelessWidget {
             );
           }),
           FloatingActionButton(
-            heroTag: "4",
+            heroTag: "3",
             onPressed: (() => Get.snackbar(counterCon.message, counterCon.counterValue.toString())),
             child: const Icon(Icons.message),
           ),
           FloatingActionButton(
-            heroTag: "5",
-            onPressed: (() => Get.toNamed("/second")),
-            child: const Icon(Icons.navigate_next),
+            heroTag: "4",
+            onPressed: (() => Get.back()),
+            child: const Icon(Icons.navigate_before),
           ),
         ],
       ),
